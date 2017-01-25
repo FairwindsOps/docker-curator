@@ -1,0 +1,2 @@
+# docker-curator
+Elasticsearch Curator
