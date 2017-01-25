@@ -5,4 +5,9 @@ MAINTAINER ReactiveOps <ops@reactiveops.com>
 
 RUN pip install --quiet elasticsearch-curator
 
-ENTRYPOINT [ "/usr/local/bin/curator" ]
+ENV FREQUENCY=3600
+
+ENV CONFIG_PATH=/etc/config/config.yml
+ENV ACTION_PATH=/etc/config/action_file.yml
+
+CMD while sleep $FREQUENCY; do /usr/local/bin/curator --config $CONFIG_PATH $ACTION_PATH; done
