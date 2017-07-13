@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "k8s-scripts": "git://github.com/reactiveops/k8s-scripts.git#v3.4.1"
+    "k8s-scripts": "git://github.com/reactiveops/k8s-scripts.git#v4.4.0"
   }
 }
