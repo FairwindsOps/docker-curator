@@ -7,7 +7,7 @@ machine:
     REPOSITORY_NAME: docker-curator
 
     CI_SHA1: $CIRCLE_SHA1
-    CI_BRANCH: $CIRCLE_BRANCH
+    CI_TAG: $CIRCLE_TAG
     CI_BUILD_NUM: $CIRCLE_BUILD_NUM
 
     DOCKERTAG: docker-curator
@@ -39,6 +39,7 @@ test:
 
 deployment:
   staging:
-    branch: master
+    tag: /v[0-9]+(\.[0-9]+)*/
+    owner: reactiveops
     commands:
       - docker-push -f deploy/staging.config

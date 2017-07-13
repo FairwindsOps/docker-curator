@@ -3,7 +3,7 @@
 FROM python:2.7.13-slim
 MAINTAINER ReactiveOps <ops@reactiveops.com>
 
-RUN pip install --quiet elasticsearch-curator
+RUN pip install --quiet elasticsearch-curator===2.1.2
 
 ENV FREQUENCY=3600
 
