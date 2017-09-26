@@ -15,8 +15,21 @@ data:
     # copying it.
     actions:
       1:
+        action: close
+        description: "Close indices older than 15 days"
+        options:
+          delete_aliases: False
+          disable_action: True
+        filters:
+        - filtertype: age
+          source: name
+          direction: older
+          timestring: '%Y.%m.%d'
+          unit: days
+          unit_count: 15
+      2:
         action: delete_indices
-        description: "Clean up ES by deleting old indices"
+        description: "Clean up ES by deleting indices older than 30 days"
         options:
           timeout_override:
           continue_if_exception: False
